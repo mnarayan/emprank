@@ -5,6 +5,7 @@ function [output]= intersection_distance(ranks,varargin)
 % 
 % INPUTS 
 % 
+    ranks(isnan(ranks))=length(ranks);
 
     topk_matrix = emprank.topk(ranks); 
 	[p nmetrics k] = size(topk_matrix); 					
