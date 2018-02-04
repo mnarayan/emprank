@@ -11,9 +11,9 @@ function [J L R tie_xcov] = paired_ties(Xrank,Yrank)
 %   - Yrank a n x 1 vector containing ranks for items 1,2,...,n 
 % 
 % OUTPUT
-%   - J
-%   - L
-%   - R
+%   - J : n x 1 vector where J(i) = J(j) = tie_no when ties are common 
+%   - L : n x 1 vector where L(i) = L(j) = tie_no when ties exclusive to X 
+%   - R : n x 1 vector where L(i) = L(j) = tie_no when ties exclusive to Y
 %   - tie_xcov : n_ties_X x n_ties_Y matrix of concordance in ties. If entries are larger than 1 then indicates that presence of joint ties. 
     
     ties1 = emprank.find_ties(Xrank); % n_unique x n
