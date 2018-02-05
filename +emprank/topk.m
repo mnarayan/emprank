@@ -14,10 +14,18 @@ function output = topk(ranks,varargin)
 		k = 1:size(ranks,1);
 	end
 	
+    for metricno=1:size(ranks,2)
+        ranks(isnan(ranks(:,metricno)),metricno) = size(ranks,1);
+    end
+    
 	output = zeros(size(ranks,1),size(ranks,2),length(k));
 	
 	for kk=1:length(k)
-		output(:,:,k(kk)) = ranks<=k(kk);
+        if(ndims(ranks)==2)
+		    output(:,:,kk) = ranks <= k(kk);
+        else
+            output(:,kk) = ranks <= k(kk);
+        end
 	end
 	
 end
