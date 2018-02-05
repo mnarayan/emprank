@@ -13,6 +13,10 @@ function [output varargout]= hoeffding_distance(ranks,varargin)
 % "Visualizing Differences in Web Search Algorithms Using the Expected Weighted Hoeffding Distance"
 % Mingxuan Sun, Guy Lebanon, and Kevyn Thompson (2010), WWW'10. 
 % 
+% "A non-parametric test of independence." Hoeffding, W. (1948). 
+% Ann. Math. Statistics, 19: 546-557.
+% 
+
     if(nargin==2)
         weight_type = varargin{1};
         weight_q = 2;
